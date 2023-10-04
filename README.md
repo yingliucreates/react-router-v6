@@ -1,4 +1,4 @@
-https://reactrouter.com/en/main/start/tutorial#redirecting-new-records-to-the-edit-page
+https://reactrouter.com/en/main/start/tutorial#deleting-records
 
 ## OOO
 
@@ -52,3 +52,37 @@ React Router uses client side routing, form data is sent to a route <code>'actio
   ```
 
 - to update and submit, we import <code>redirect</code> from React Router, in order to redirect out of "contacts/:contactId/edit" into "contacts/:contactId"
+
+### NavLink - active link styling
+
+- When the user is at the URL in the NavLink, then isActive will be true. When it's about to be active (the data is still loading) then isPending will be true.
+
+  - ```javascript
+    <NavLink
+    	to={`contacts/${contact.id}`}
+    	className={({ isActive, isPending }) =>
+    		isActive ? 'active' : isPending ? 'pending' : ''
+    	}
+    >
+    	{/* other code */}
+    </NavLink>
+    ```
+
+  ```
+
+  ```
+
+### useNavigation - add global pending UI
+
+- ```javascript
+  const navigation = useNavigation(); //"idle" | "submitting" | "loading"
+  /*existing code*/
+  return (
+  	/*existing code*/
+  	<div id="detail" className={navigation.state === 'loading' ? loading : ''}>
+  		<Outlet />
+  	</div>
+
+  	/*existing code*/
+  );
+  ```
