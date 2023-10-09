@@ -7,7 +7,7 @@ https://reactrouter.com/en/main/start/tutorial#deleting-records
 - create <code>router</code> using <code>createBrowserRouter</code> and pass it into <code>RouterProvider</code> as a prop
 - create <code>root.jsx/Root</code> which is essentially a <code>nav</code>
 - since we want it to appear on our '/' route, we go back to the router, set the <code>element</code> of path '/' to <code>Root</code> component;
-- create an <code>ErrorPage</code> by employing <code>useRouterError</code> hook
+- create an <code>ErrorPage</code> by employing <code>useRouterError</code> hook - error type: "Not Found" when user navigates to routes that don't exist
 - set the <code>errorElement</code> of path '/' to <code>ErrorPage</code> component;
 
 ### Another Route - in this case, /contacts/:contactId
